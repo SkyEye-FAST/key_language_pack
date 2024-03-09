@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     paths:
-      - 'key_language_pack.zip'
+      - '**.zip'
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
 
       - name: Get Minecraft version
         run: |
-          echo "ver=`cat version.txt`" >> "$GITHUB_ENV"
+          echo "ver=$(<version.txt)" >> "$GITHUB_ENV"
 
       - name: Release
         uses: softprops/action-gh-release@v2

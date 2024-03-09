@@ -1,0 +1,17 @@
+{
+    "pack": {
+        "pack_format": 28,
+        "supported_formats": [
+            9,
+            28
+        ],
+        "description": "Translation Key Language Resource Pack"
+    },
+    "language": {
+        "key": {
+            "name": "Translation",
+            "region": "Key",
+            "bidirectional": false
+        }
+    }
+}

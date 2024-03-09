@@ -3,7 +3,7 @@
         "pack_format": 28,
         "supported_formats": [
             9,
-            28
+            99
         ],
         "description": "Translation Key Language Resource Pack"
     },

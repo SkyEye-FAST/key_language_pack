@@ -12,11 +12,14 @@ jobs:
         run: |
           cat version.txt
           echo "ver=$(<version.txt)" >> "$GITHUB_ENV"
+          printf 'env: %s\n' "$ver"
 
       - name: Release
-        uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/')
+        uses: marvinpinto/action-automatic-releases@latest
         with:
-          files: key_language_pack.zip
-          name: "${{ env.ver }}"
-          tag_name: "${{ env.ver }}"
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "${{ env.ver }}"
+          title: "${{ env.ver }}"
+          prerelease: false
+          files: |
+            key_language_pack.zip

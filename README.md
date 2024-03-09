@@ -2,6 +2,8 @@
 
 此项目用于提供将Minecraft Java版语言文件替换为本地化键名（Translation Key）的资源包。
 
+推荐与模组[Language Reload](https://modrinth.com/mod/language-reload)和[Untranslated Items](https://www.curseforge.com/minecraft/mc-mods/untranslated-items)一同使用。
+
 ## 说明
 
 ### 获取语言文件

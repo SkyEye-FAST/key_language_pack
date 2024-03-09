@@ -1,6 +1,9 @@
 name: Release
 
-on: push
+on:
+  push:
+    paths:
+      - '**.zip'
 
 jobs:
   build:
@@ -12,7 +15,6 @@ jobs:
         run: |
           cat version.txt
           echo "ver=$(<version.txt)" >> "$GITHUB_ENV"
-          printf 'env: %s\n' "$ver"
 
       - name: Release
         uses: marvinpinto/action-automatic-releases@latest

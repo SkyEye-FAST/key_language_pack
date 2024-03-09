@@ -37,6 +37,8 @@ except r.exceptions.RequestException as e:
     print("无法获取版本清单，请检查网络连接。")
     sys.exit()
 V = version_manifest_json["latest"]["snapshot"]
+with open(P / "version.txt", "w", encoding="utf-8") as f:
+    f.write(V)
 
 # 获取client.json
 client_manifest_url = next(
@@ -71,4 +73,4 @@ with ZipFile(client_path) as client:
 print("正在删除client.jar……\n")
 client_path.unlink()
 
-print("\n已完成。")
+print("已完成。")

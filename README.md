@@ -12,7 +12,7 @@
 
 ### 资源包
 
-资源包使用[`pack.py`](/pack.py)生成。脚本生成的语言文件为[`key.json`](/key.json)，同[`pack.mcmeta`](/pack.mcmeta)一同打包为[`key_language_pack.zip`](/key_language_pack.zip)。
+资源包使用[`pack.py`](/pack.py)生成。脚本生成的语言文件为[`key.json`](/key.json)和[`key_arg.json`](/key_arg.json)，同[`pack.mcmeta`](/pack.mcmeta)一同打包为[`key_language_pack.zip`](/key_language_pack.zip)。
 
 资源包向游戏内添加了名为“Translation (Keys)”的语言，选择之后，所有字符串会变为本地化键名。
 

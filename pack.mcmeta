@@ -10,7 +10,12 @@
     "language": {
         "key": {
             "name": "Translation",
-            "region": "Key",
+            "region": "Keys",
+            "bidirectional": false
+        },
+        "key_arg": {
+            "name": "Translation",
+            "region": "Keys with Arguments",
             "bidirectional": false
         }
     }

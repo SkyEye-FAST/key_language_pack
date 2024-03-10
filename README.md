@@ -16,6 +16,13 @@
 
 资源包向游戏内添加了名为“Translation (Key)”的语言，选择之后所有字符串会变为本地化键名。
 
+效果如图所示：
+![Sample](/sample/1.png)
+![Sample](/sample/2.png)
+![Sample](/sample/3.png)
+![Sample](/sample/4.png)
+![Sample](/sample/5.png)
+
 ## 反馈
 
 遇到的问题和功能建议等可以提出议题（Issue）。

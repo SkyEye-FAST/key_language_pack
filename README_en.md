@@ -4,9 +4,9 @@
 
 ----
 
-This project provides a resource pack that replaces content of Minecraft: Java Edition language files with translation keys.
+This project provides a resource pack replacing the content of Minecraft: Java Edition language files with translation keys.
 
-It is recommended to use this resource pack alongside the mods [Language Reload](https://modrinth.com/mod/language-reload) and [Untranslated Items](https://www.curseforge.com/minecraft/mc-mods/untranslated-items).
+It is recommended to use this resource pack with the mods [Language Reload](https://modrinth.com/mod/language-reload) and [Untranslated Items](https://www.curseforge.com/minecraft/mc-mods/untranslated-items).
 
 ## Description
 
@@ -33,6 +33,6 @@ The effect of selecting "Translation (Keys)" is shown in the images below:
 
 ## Feedback
 
-Issues encountered and feature suggestions can be raised as issues.
+Problems encountered and feature suggestions can be raised as issues.
 
 Pull requests are welcome.

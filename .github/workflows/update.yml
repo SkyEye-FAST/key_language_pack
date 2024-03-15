@@ -1,8 +1,6 @@
 name: Update resource pack
 
-on:
-  schedule:
-    - cron: "25 14 * * *"
+on: push
 
 jobs:
   build:

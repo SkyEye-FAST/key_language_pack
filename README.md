@@ -16,7 +16,7 @@
 
 ### 资源包
 
-**注：本项目忽略了所有以`translation.`开头的键名，因为它们被用于测试游戏内字符串能否正常显示。并且它们过于复杂，常规字符串中不会出现类似的情况。如果需要替换了这些键名的资源包，参见[Nickid2018/TranslationKeyPack](https://github.com/Nickid2018/TranslationKeyPack)和[bilintsui/keypack-generator](https://github.com/bilintsui/keypack-generator)。**
+**注：本项目忽略了所有以`translation.`开头的键名，因为它们被用于测试游戏内字符串能否正常显示。并且它们过于复杂，常规字符串中不会出现类似的情况。如果需要替换了这些键名的资源包，参见[Nickid2018/TranslationKeyPack](https://github.com/Nickid2018/TranslationKeyPack)和[bilintsui/keypack](https://github.com/bilintsui/keypack)。**
 
 资源包使用[`pack.py`](/pack.py)生成。脚本生成的语言文件为[`key.json`](/key.json)和[`key_arg.json`](/key_arg.json)，同[`pack.mcmeta`](/pack.mcmeta)一同打包为[`key_language_pack.zip`](/key_language_pack.zip)。
 

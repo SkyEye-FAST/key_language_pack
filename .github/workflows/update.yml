@@ -31,7 +31,7 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           default_author: github_actions
-          message: "Update resource pack"
+          message: "Update language files"
 
       - name: Update resource pack
         run: |

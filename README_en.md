@@ -33,6 +33,6 @@ The effect of selecting "Translation (Keys)" is shown in the images below:
 
 ## Feedback
 
-Problems encountered and feature suggestions can be raised as issues.
+Please feel free to raise issues for any problems encountered or feature suggestions.
 
 Pull requests are welcome.

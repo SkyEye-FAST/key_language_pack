@@ -1,6 +1,6 @@
 {
     "pack": {
-        "pack_format": 28,
+        "pack_format": 32,
         "supported_formats": [
             9,
             99

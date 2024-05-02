@@ -14,7 +14,7 @@ with open(P / "source" / "en_us.json", "rb") as s:
     source = json.load(s)
 
 # 生成语言文件
-with open(P / "key.json", "w", encoding="utf-8") as f:
+with open(P / "output" / "key.json", "w", encoding="utf-8") as f:
     json.dump({k: k for k in source.keys()}, f, indent=2)
 
 for key, value in source.items():
@@ -29,12 +29,12 @@ for key, value in source.items():
     else:
         source[key] = key
 
-with open(P / "key_arg.json", "w", encoding="utf-8") as file:
+with open(P / "output" / "key_arg.json", "w", encoding="utf-8") as file:
     json.dump(source, file, indent=2)
 
 # 生成资源包
 pack_dir = P / "key_language_pack.zip"
 with z.ZipFile(pack_dir, "w", compression=z.ZIP_DEFLATED, compresslevel=9) as f:
     f.write(P / "pack.mcmeta", arcname="pack.mcmeta")
-    f.write(P / "key.json", arcname="assets/minecraft/lang/key.json")
-    f.write(P / "key_arg.json", arcname="assets/minecraft/lang/key_arg.json")
+    f.write(P / "output" / "key.json", arcname="assets/minecraft/lang/key.json")
+    f.write(P / "output" / "key_arg.json", arcname="assets/minecraft/lang/key_arg.json")

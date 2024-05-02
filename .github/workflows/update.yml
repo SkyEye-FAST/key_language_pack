@@ -41,7 +41,7 @@ jobs:
           echo "ver=$(<version.txt)" >> "$GITHUB_ENV"
           
       - name: Release
-      - uses: Kir-Antipov/mc-publish@v3.3
+        uses: Kir-Antipov/mc-publish@v3.3
         with:
           modrinth-id: QCLPvYpB
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}

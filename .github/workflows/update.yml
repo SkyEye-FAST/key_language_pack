@@ -24,8 +24,7 @@ jobs:
           pip install requests
 
       - name: Update language files
-        run: |
-          python source.py
+        run: python source.py
 
       - name: Commit
         uses: EndBug/add-and-commit@v9
@@ -34,20 +33,22 @@ jobs:
           message: "Update language files"
 
       - name: Update resource pack
-        run: |
-          python pack.py
+        run: python pack.py
 
       - name: Get Minecraft version
         run: |
           cat version.txt
           echo "ver=$(<version.txt)" >> "$GITHUB_ENV"
-
+          
       - name: Release
-        uses: marvinpinto/action-automatic-releases@latest
+      - uses: Kir-Antipov/mc-publish@v3.3
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "${{ env.ver }}"
-          title: "${{ env.ver }}"
-          prerelease: false
-          files: |
-            key_language_pack.zip
+          modrinth-id: QCLPvYpB
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-tag: "${{ env.ver }}"
+          files: key_language_pack.zip
+          name: "${{ env.ver }}"
+          version: "${{ env.ver }}"
+          game-versions: ">1.19.3"
+

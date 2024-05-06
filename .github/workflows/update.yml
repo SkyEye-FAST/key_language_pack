@@ -2,7 +2,7 @@ name: Update resource pack
 
 on:
   schedule:
-    - cron: "30 16 * * *"
+    - cron: "00 10 * * *"
 
 jobs:
   build:
@@ -51,4 +51,5 @@ jobs:
           name: "${{ env.ver }}"
           version: "${{ env.ver }}"
           game-versions: ">1.19.3"
+          loaders: optifine
 

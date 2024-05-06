@@ -2,7 +2,7 @@ name: Update resource pack
 
 on:
   schedule:
-    - cron: "00 10 * * *"
+    - cron: "30 10 * * *"
 
 jobs:
   build:
@@ -43,13 +43,8 @@ jobs:
       - name: Release
         uses: Kir-Antipov/mc-publish@v3.3
         with:
-          modrinth-id: QCLPvYpB
-          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           github-tag: "${{ env.ver }}"
           files: key_language_pack.zip
           name: "${{ env.ver }}"
           version: "${{ env.ver }}"
-          game-versions: ">1.19.3"
-          loaders: optifine
-

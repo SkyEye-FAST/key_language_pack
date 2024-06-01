@@ -5,13 +5,14 @@ import json
 import re
 import zipfile as z
 from pathlib import Path
+from typing import Dict, List
 
 # 当前绝对路径
 P = Path(__file__).resolve().parent
 
 # 读取语言文件
-with open(P / "source" / "en_us.json", "rb") as s:
-    source: dict[str, str] = json.load(s)
+with open(P / "mc_lang" / "full" / "en_us.json", "rb") as s:
+    source: Dict[str, str] = json.load(s)
 
 # 生成语言文件
 with open(P / "output" / "key.json", "w", encoding="utf-8") as f:
@@ -21,7 +22,7 @@ for key, value in source.items():
     if key.startswith("translation."):
         continue
     if "%" in value:
-        arguments: list[str] = re.findall(r"%\d*\$?[sd]", value)
+        arguments: List[str] = re.findall(r"%\d*\$?[sd]", value)
         arguments_list = [f"({arg})" for arg in arguments]
         source[key] = re.sub(
             r"%\d+\$s", r"%s", f"{key} {" ".join(arguments_list)}"

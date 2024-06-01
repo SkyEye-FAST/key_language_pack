@@ -24,7 +24,7 @@ jobs:
           pip install requests
 
       - name: Update language files
-        run: python source.py
+        run: git submodule foreach 'git pull origin master'
 
       - name: Update resource pack
         run: python pack.py

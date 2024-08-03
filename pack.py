@@ -37,5 +37,6 @@ with open(P / "output" / "key_arg.json", "w", encoding="utf-8") as file:
 pack_dir = P / "key_language_pack.zip"
 with z.ZipFile(pack_dir, "w", compression=z.ZIP_DEFLATED, compresslevel=9) as f:
     f.write(P / "pack.mcmeta", arcname="pack.mcmeta")
+    f.write(P / "pack.png", arcname="pack.png")
     f.write(P / "output" / "key.json", arcname="assets/minecraft/lang/key.json")
     f.write(P / "output" / "key_arg.json", arcname="assets/minecraft/lang/key_arg.json")

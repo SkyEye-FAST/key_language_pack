@@ -11,32 +11,36 @@ from typing import Dict, List
 P = Path(__file__).resolve().parent
 
 # 读取语言文件
-with open(P / "mc_lang" / "full" / "en_us.json", "rb") as s:
+source_path = P / "mc_lang" / "full" / "en_us.json"
+with source_path.open("r", encoding="utf-8") as s:
     source: Dict[str, str] = json.load(s)
 
 # 生成语言文件
-with open(P / "output" / "key.json", "w", encoding="utf-8") as f:
+output_dir = P / "output"
+output_dir.mkdir(exist_ok=True)
+key_file = output_dir / "key.json"
+with key_file.open("w", encoding="utf-8") as f:
     json.dump({k: k for k in source.keys()}, f, indent=2)
 
 for key, value in source.items():
-    if key.startswith("translation."):
-        continue
-    if "%" in value:
-        arguments: List[str] = re.findall(r"%\d*\$?[sd]", value)
-        arguments_list = [f"({arg})" for arg in arguments]
-        source[key] = re.sub(
-            r"%\d+\$s", r"%s", f"{key} {" ".join(arguments_list)}"
-        ).rstrip()
-    else:
-        source[key] = key
+    if not key.startswith("translation."):
+        if "%" in value:
+            arguments: List[str] = re.findall(r"%\d*\$?[sd]", value)
+            arguments_list: List[str] = [f"({arg})" for arg in arguments]
+            source[key] = re.sub(
+                r"%\d+\$s", r"%s", f"{key} {' '.join(arguments_list)}"
+            ).rstrip()
+        else:
+            source[key] = key
 
-with open(P / "output" / "key_arg.json", "w", encoding="utf-8") as file:
-    json.dump(source, file, indent=2)
+key_arg_file = output_dir / "key_arg.json"
+with key_arg_file.open("w", encoding="utf-8") as f:
+    json.dump(source, f, indent=2)
 
 # 生成资源包
 pack_dir = P / "key_language_pack.zip"
-with z.ZipFile(pack_dir, "w", compression=z.ZIP_DEFLATED, compresslevel=9) as f:
-    f.write(P / "pack.mcmeta", arcname="pack.mcmeta")
-    f.write(P / "pack.png", arcname="pack.png")
-    f.write(P / "output" / "key.json", arcname="assets/minecraft/lang/key.json")
-    f.write(P / "output" / "key_arg.json", arcname="assets/minecraft/lang/key_arg.json")
+with z.ZipFile(pack_dir, "w", compression=z.ZIP_DEFLATED, compresslevel=9) as zipf:
+    zipf.write(P / "pack.mcmeta", arcname="pack.mcmeta")
+    zipf.write(P / "pack.png", arcname="pack.png")
+    zipf.write(key_file, arcname="assets/minecraft/lang/key.json")
+    zipf.write(key_arg_file, arcname="assets/minecraft/lang/key_arg.json")

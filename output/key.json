@@ -5214,6 +5214,7 @@
   "mount.onboard": "mount.onboard",
   "multiplayer.applyingPack": "multiplayer.applyingPack",
   "multiplayer.disconnect.authservers_down": "multiplayer.disconnect.authservers_down",
+  "multiplayer.disconnect.bad_chat_index": "multiplayer.disconnect.bad_chat_index",
   "multiplayer.disconnect.banned": "multiplayer.disconnect.banned",
   "multiplayer.disconnect.banned_ip.expiration": "multiplayer.disconnect.banned_ip.expiration",
   "multiplayer.disconnect.banned_ip.reason": "multiplayer.disconnect.banned_ip.reason",

@@ -46,6 +46,18 @@ jobs:
           cat version.txt
           echo "ver=$(<version.txt)" >> "$GITHUB_ENV"
 
+      - name: Check if Modrinth version exists
+        run: |
+          url="https://api.modrinth.com/v2/project/QCLPvYpB/version/${{ env.ver }}"
+          resp=$(curl --silent "$url")
+          if echo "$resp" | grep -q '"version_number"'; then
+            echo "MODRINTH_EXISTS=true" >> "$GITHUB_ENV"
+            echo "Modrinth version exists, will skip upload."
+          else
+            echo "MODRINTH_EXISTS=false" >> "$GITHUB_ENV"
+            echo "Modrinth version does not exist, will upload."
+          fi
+
       - name: Release
         uses: Kir-Antipov/mc-publish@v3.3
         with:
@@ -54,3 +66,18 @@ jobs:
           files: key_language_pack.zip
           name: "${{ env.ver }}"
           version: "${{ env.ver }}"
+
+      - name: Upload to Modrinth
+        if: env.MODRINTH_EXISTS != 'true'
+        uses: cloudnode-pro/modrinth-publish@v2
+        with:
+          token: ${{ secrets.MODRINTH_TOKEN }}
+          project: QCLPvYpB
+          version: ${{ env.ver }}
+          loaders: minecraft
+          game-versions: |-
+            1.21.x
+            1.20.x
+            1.19.4
+            1.19.3
+          files: key_language_pack.zip

@@ -3051,6 +3051,7 @@
   "commands.time.query.gametime": "commands.time.query.gametime (%s)",
   "commands.time.query.timeline": "commands.time.query.timeline (%s) (%s)",
   "commands.time.query.timeline.repetitions": "commands.time.query.timeline.repetitions (%s) (%s)",
+  "commands.time.rate": "commands.time.rate (%s) (%s)",
   "commands.time.resume": "commands.time.resume (%s)",
   "commands.time.set": "commands.time.set (%s)",
   "commands.time.set.absolute": "commands.time.set.absolute (%s) (%s)",

@@ -2612,6 +2612,8 @@
   "chat_screen.message": "chat_screen.message (%s)",
   "chat_screen.messages_not_allowed": "chat_screen.messages_not_allowed",
   "chat_screen.restricted": "chat_screen.restricted",
+  "chat_screen.restricted_friends_only": "chat_screen.restricted_friends_only",
+  "chat_screen.restricted_friends_only.narration": "chat_screen.restricted_friends_only.narration",
   "chat_screen.restricted.narration": "chat_screen.restricted.narration",
   "chat_screen.title": "chat_screen.title",
   "chat_screen.usage": "chat_screen.usage",
